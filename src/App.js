@@ -63,7 +63,7 @@ function Home() {
 
       <h4>기능</h4>
       <Link to="/pro1">회원가입 창</Link><br/>
-      <Link to="/login">로그인</Link>
+      <Link to="/login">로그인</Link> <br/>
       <Link to="/itemList">아이템 리스트</Link>
     </div>
   )
