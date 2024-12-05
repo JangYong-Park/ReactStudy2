@@ -9,6 +9,11 @@ export default function Study() {
     const idRef = useRef('');
     const pwRef = useRef('');
 
+    //페이지 접속 했을 때.
+    useEffect(()=>{
+        localStorage.setItem('userId');
+    }, [])
+
     const loginAction = () => {
 
         const idValue = idRef.current.value;
@@ -25,6 +30,9 @@ export default function Study() {
             if(data.code === '200' && data.data === 'Y') {
                 //다음 페이지 이동!
                 console.log('성공');
+                localStorage.setItem('userId',userId); // 권한 등록
+                localStorage.setItem('auto','random UUID JWT');
+                navigate('/itemList'); //아이템 리스트 이동
             }
             else {
                 idRef.current.value = '';
